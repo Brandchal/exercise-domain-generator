@@ -1,24 +1,18 @@
-let pronoun = ['the','our'];
-let adj = ['great', 'big' ];
-let noun = ['jogger','racoon'];
+let pronoun = ['the', 'our'];
+let adj = ['great', 'big'];
+let noun = ['jogger', 'racoon'];
+let domain = [".com", ".es", ".net", ".us", ".io"]
 
-let randomNumber1 = Math.floor(Math.random() *2);
-let randomNumber2 = Math.floor(Math.random() *2);
-let randomNumber3 = Math.floor(Math.random() *2);
+for (let p = 0; p < pronoun.length; p++){
 
-let allDomains = [];
+    for(let a = 0; a < adj.length; a++){
 
-  function domainGen(){
-    allDomains.push(pronoun[randomNumber1]+adj[randomNumber2]+noun[randomNumber3]+".com");
+        for(let n = 0; n < noun.length; n++){
 
-    for (let i = 0; i < 8; i++) {
-        if (pronoun[randomNumber1]+adj[randomNumber2]+noun[randomNumber3]+".com" !== allDomains[i]){
-            allDomains.push(pronoun[randomNumber1]+adj[randomNumber2]+noun[randomNumber3]+".com");
+            for(let d = 0; d < domain.length; d++){
+
+                console.log(pronoun[p]+adj[a]+noun[n]+domain[d]);
+            }
         }
-        
     }
-
-    return allDomains;
-  }
-
-console.log(domainGen())
+}
